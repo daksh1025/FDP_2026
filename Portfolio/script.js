@@ -1,13 +1,7 @@
-const animatedElements = document.querySelectorAll('.fade-in, .slide-up');
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-}, {
-    threshold: 0.2
+// Navbar background change on scroll
+window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    navbar.style.background = window.scrollY > 50 
+        ? "#0f172a" 
+        : "rgba(15,23,42,0.9)";
 });
-
-animatedElements.forEach(el => observer.observe(el));
